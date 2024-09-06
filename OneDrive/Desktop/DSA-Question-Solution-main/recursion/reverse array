@@ -1,0 +1,11 @@
+reverse array using recursion
+
+
+int reverse(left , right){
+  int right = n-1;
+  int left = 0;
+  if(left >= right)return arr;
+  else swap(arr(left),arr(right));
+
+  reversearr(left++, right--)
+    }

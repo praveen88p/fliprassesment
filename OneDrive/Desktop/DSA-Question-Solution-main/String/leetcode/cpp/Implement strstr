@@ -1,0 +1,45 @@
+asked in Microsoft , Amazon ,Facebook  
+---->>>>GFG<<<<-------
+
+Que -- Your task is to implement the function strstr. The function takes two strings as arguments (s,x) and 
+locates the occurrence of the string x in the string s. 
+The function returns an integer denoting the first occurrence of the string x in s (0 based indexing).
+
+Note: You are not allowed to use inbuilt function.
+
+int cheeckstring(string s, string x, int si){
+    int index= si;
+    int n = x.size();
+    for(int i = 0; i< n; i++){
+        if(s[si] == x[i]){
+            si++;
+        }
+        else{
+            return -1;
+        }
+    }
+    return index;
+}
+
+int strstr(string s, string x)
+{
+     int n =s.size();
+     int ans = INT_MIN;
+    
+     for(int i = 0 ; i< n ; i++){
+         if(s[i] == x[0]){
+         int result = cheeckstring(s,x,i);
+         ans = result;
+         
+         if(ans == -1 ){
+             continue;
+         }
+         else{
+            return ans; 
+         }
+         }
+         
+         
+     }
+     return -1;
+}
