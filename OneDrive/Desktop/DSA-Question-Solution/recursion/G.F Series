@@ -1,0 +1,26 @@
+Siddhant made a special series and named it as G.F Series. The series follows this trend  Tn=(Tn-2)2-(Tn-1)  
+in which the first and the second term are 0 and 1 respectively. Help Siddhant to find the first n terms of the series.
+
+Note: Print a white space (" ") after every integer and a newline character after every testcase.
+
+void gfSeries(int N)
+    {
+        solve(N);
+        cout<<endl;
+    }
+    
+    // n = 6 , 5 ,4 ,3      output 0 1 -1 2 -1 5
+    // n1 = 0, 1 ,-1, 2
+    //  n2 =1, -1 , 2, -1
+    // n3 = 0*0-1 = -1 -- 1*1- (-1) = 2 -- -1*-1-2 = -1 --- 
+    
+    void solve(int N,long int n1 = 0,long int n2 = 1){
+        if(n1 == 0) cout<<n1<<" "<<n2<<" ";
+        
+        if(N >= 3){
+            
+            long int n3 = n1*n1-n2;
+            cout<<n3<<" ";
+            solve(N-1,n2,n3);
+        }
+    }

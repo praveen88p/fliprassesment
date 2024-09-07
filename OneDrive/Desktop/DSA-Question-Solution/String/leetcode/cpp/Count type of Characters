@@ -1,0 +1,35 @@
+Given a string S, write a program to count the occurrence of Lowercase characters, Uppercase characters, Special characters and Numeric values in the string.
+Note: There are no white spaces in the string.
+
+ vector <int> count (string s)
+        {
+            //code here.
+            vector<int>v;
+            int low = 0;
+            int uper = 0;
+            int spcial = 0;
+            int numb = 0;
+            
+            for(int i = 0 ; i < s.size(); i++){
+                if(s[i] >= 'A'&& s[i] <= 'Z'){
+                    uper++;
+                }
+                else if(s[i] >= 'a'&& s[i] <= 'z'){
+                    low++;
+                }
+                else if(s[i] >= '0'&& s[i] <= '9'){
+                    numb++;
+                }
+                else{
+                    spcial++;
+                }
+            }
+            v.push_back(uper);
+            v.push_back(low);
+            v.push_back(numb);
+            v.push_back(spcial);
+            return v;
+        }
+
+I have solved this question in O(s) --->>> Time Complexcite
+                               O(4) --->>> Space Complexcite

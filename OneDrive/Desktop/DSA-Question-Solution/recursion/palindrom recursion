@@ -1,0 +1,15 @@
+int findpal(int i , string s){
+int n = s.size();
+if(i >= n/2)return 1;
+
+if( s[i] != s[n - i] -1;){
+return 0;
+}
+else{
+findpal(i++);
+}
+}
+string findpalindrom(string str){
+int ans = findpal( 0 , str);
+return ans;
+}

@@ -1,0 +1,13 @@
+#link = https://www.naukri.com/code360/problems/n-forest_6570177?utm_source=youtube&utm_medium=affiliate&utm_campaign=striver_patternproblems
+
+num=int(input())
+def pattern(n):
+    
+    for i in range(n):
+        for j in range(n):
+            print("*",end=" ")
+        print()
+
+pattern(num)
+
+

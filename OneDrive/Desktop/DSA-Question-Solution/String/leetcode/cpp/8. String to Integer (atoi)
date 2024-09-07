@@ -1,0 +1,40 @@
+Implement the myAtoi(string s) function, which converts a string to a 32-bit signed integer.
+
+The algorithm for myAtoi(string s) is as follows:
+
+Whitespace: Ignore any leading whitespace (" ").
+Signedness: Determine the sign by checking if the next character is '-' or '+', assuming positivity is neither present.
+Conversion: Read the integer by skipping leading zeros until a non-digit character is encountered or the end of the string is reached. If no digits were read, then the result is 0.
+Rounding: If the integer is out of the 32-bit signed integer range [-231, 231 - 1], then round the integer to remain in the range. Specifically, integers less than -231 should be rounded to -231, and integers greater than 231 - 1 should be rounded to 231 - 1.
+Return the integer as the final result.
+
+
+int myAtoi(string s) {
+        if(s.length()==0) return 0;
+
+        int i=0;
+        while(i<s.size() && s[i] == ' '){
+            i++;
+        }
+        s = s.substr(i);
+
+        int sign = +1;
+        long ans = 0;
+
+        if(s[0] == '-')sign = -1;
+
+        int MAX = INT_MAX, MIN = INT_MIN;
+        i = (s[0] == '+' || s[0] == '-')? 1 : 0;
+
+        while(i< s.size()){
+            if(s[0] == ' '|| !isdigit(s[i])) break;
+
+            ans =ans * 10 + s[i]-'0';
+            if(sign == -1 && -1*ans < MIN)return MIN;
+            if(sign == 1  && ans > MAX )return MAX;
+
+            i++;
+        }
+
+        return (int)(sign* ans);
+    }
