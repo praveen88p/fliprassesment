@@ -5,16 +5,16 @@ This project is a RESTful API for an Ecommerce platform, built using Django and 
 
 ## Features
 
-- Authentication (Sign Up, Sign In
+- Authentication (Sign Up, Sign In)
 - Product Management (add product, Update product, Delete Product, Get All Products)
 - Cart management (add, update, remove items)
-- Order Management (Place Order, Get all orders, Get Orders by Customer ID,
+- Order Management (Place Order, Get all orders, Get Orders by Customer ID)
 
 ## Installation
 
 ### Prerequisites
 
-- Python 
+- Python 3.12.4
 - Django and Django REST Framework
 - Postman (for testing API endpoints)
 
@@ -23,8 +23,8 @@ This project is a RESTful API for an Ecommerce platform, built using Django and 
 1. **Clone the Repository**
 
     ```bash
-    git clone https://github.com/praveen88p/ecommerce-api.git
-    cd ecommerce-api
+    git clone https://github.com/praveen88p/fliprassesment.git
+    cd ecommerce_project
     ```
 
 2. **Create and Activate a Virtual Environment**
@@ -69,33 +69,28 @@ You can use Postman or any API client to interact with the API. The following en
 
 ### Authentication
 
-- **`POST /signup/`** - Register a new user
-- **`POST /login/`** - Login and obtain an authentication token
+- **`POST api/signup/`** - Register a new user
+- **`POST api/signin/`** - Login and obtain an authentication token
 
 ### Products
 
-- **`GET /products/`** - List all products
-- **`POST /products/`** - Create a new product (Admin only)
-- **`PUT /products/{product_id}/`** - Update a product (Admin only)
-- **`DELETE /products/{product_id}/`** - Delete a product (Admin only)
+- **`Post /api/addproduct`** - Create a new product
+- **`PUT /api/updateproduct/{product_id}/`** - Update a produc
+- **`DELETE api/deleteproduct/{product_id}/`** - Delete a product
+- **`GET /api/products/`** - List all products
 
 ### Cart
 
-- **`POST /cart/add/`** - Add an item to the cart
-- **`PUT /cart/update/`** - Update item quantity in the cart
-- **`DELETE /cart/remove/`** - Remove item from cart
-- **`GET /cart/`** - Retrieve all items in the user's cart
+- **`POST /api/cart/add** - Add an item to the cart ( After login)
+- **`PUT /api/cart/update`** - Update item quantity in the cart
+- **`DELETE /api/cart/delete`** - Remove item from cart
+- **`GET /api/cart`** - Retrieve all items in the user's cart
 
 ### Orders
 
-- **`POST /placeorder/`** - Place an order with items in the cart
-- **`GET /orders/customer/{customer_id}/`** - Retrieve all orders by customer ID (Admin only)
-- **`GET /getallorders/`** - Retrieve all orders (Admin only)
+- **`POST /api/placeorder`** - Place an order with items in the cart
+- **`GET /api/getallorders`** - Retrieve all orders 
+- **`GET /api/orders/customer/{customer_id}`** - Retrieve all orders by customer ID
 
-## API Endpoints
-
-### Authentication
-
-#### Signup User
-```http
-POST /signup/
+## API documentation Publishing Link
+[API documentation](https://documenter.getpostman.com/view/39581971/2sAY52bzA4)
